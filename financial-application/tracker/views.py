@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import View
 from django.contrib.auth import authenticate, login
 from .forms import UserRegisterForm
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 class SignUpView(View):
     def get(self, request):
@@ -24,3 +25,7 @@ class SignUpView(View):
             return redirect('tracker')
         
         return render(request, 'tracker/signup.html', {'form': form})
+
+class DashboardView(LoginRequiredMixin, View):
+    def get(self, request):
+        return render(request, 'tracker/dashboard.html')
