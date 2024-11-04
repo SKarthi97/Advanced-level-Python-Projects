@@ -51,3 +51,7 @@ class ExpenseTransaction(models.Model):
 
     def __str__(self):
         return '%s' % (self.amount)
+
+class TransactionMethod(models.Model):
+    id = models.IntegerField(primary_key=True, unique=True)
+    method = models.CharField(max_length=100)
