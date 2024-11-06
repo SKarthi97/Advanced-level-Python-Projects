@@ -57,14 +57,14 @@ class TransactionMethod(models.Model):
     method = models.CharField(max_length=100)
 
     def __str__(self):
-        return method
+        return self.method
 
 class TransactionType(models.Model):
     id = models.IntegerField(primary_key=True, unique=True)
     type = models.CharField(max_length=100)
 
     def __str__(self):
-        return type
+        return self.type
 
 class Budget(models.Model):
     budget = models.DecimalField(max_digits=100, decimal_places=2)
