@@ -65,3 +65,10 @@ class TransactionType(models.Model):
 
     def __str__(self):
         return type
+
+class Budget(models.Model):
+    budget = models.DecimalField(max_digits=100, decimal_places=2)
+    current_amount = models.DecimalField(max_digits=100, decimal_places=2)
+    
+    def __str__(self):
+        f"{self.budget, self.current_amount}"
