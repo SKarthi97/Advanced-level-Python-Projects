@@ -55,3 +55,13 @@ class ExpenseTransaction(models.Model):
 class TransactionMethod(models.Model):
     id = models.IntegerField(primary_key=True, unique=True)
     method = models.CharField(max_length=100)
+
+    def __str__(self):
+        return method
+
+class TransactionType(models.Model):
+    id = models.IntegerField(primary_key=True, unique=True)
+    type = models.CharField(max_length=100)
+
+    def __str__(self):
+        return type
